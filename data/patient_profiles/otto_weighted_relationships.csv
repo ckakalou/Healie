@@ -1,0 +1,9 @@
+source_factor,target_hl_dimension,relationship_type,weight,direction,effect,evidence_status,notes
+High worry / anxiety,Appraising,INFLUENCES,0.85,negative,Makes information feel threatening and harder to evaluate calmly,expert_informed_provisional,Central Otto factor from previous HEALIE use case
+High uncertainty,Appraising,INFLUENCES,0.80,negative,Makes prognosis and disease meaning harder to interpret,expert_informed_provisional,Central Otto factor from previous HEALIE use case
+Low health literacy,Understanding,INFLUENCES,0.90,negative,Reduces ability to understand standard medical explanations,expert_informed_provisional,Core profile characteristic
+Low medical knowledge,Understanding,INFLUENCES,0.85,negative,Makes technical terminology difficult to process,expert_informed_provisional,Triggers lexical simplification
+Elderly age 65+,Understanding,INFLUENCES,0.65,negative,Requires accessibility-oriented presentation,expert_informed_provisional,Otto is 75 years old
+Working memory deficit,Understanding,INFLUENCES,0.75,negative,Reduces retention of key information,expert_informed_provisional,Inferred cognitive factor requiring expert validation
+Processing speed deficit,Understanding,INFLUENCES,0.60,negative,Requires slower-paced stepwise explanations,expert_informed_provisional,Inferred cognitive factor requiring expert validation
+Low educational level,Understanding,INFLUENCES,0.70,negative,Requires simpler syntax and shorter text blocks,expert_informed_provisional,Otto has middle-school education

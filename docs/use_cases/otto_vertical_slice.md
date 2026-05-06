@@ -21,43 +21,43 @@ This slice focuses only on Otto. It does not include additional patients, full o
 | Worry / Anxiety         | High|
 | Uncertainty             | High |
 | Medical knowledge       | Low |
-| Cognitive profile       | Possible working memory and processing speed difficulties |
+| Cognitive profile       | Possible memory and processing speed difficulties |
 | Main communication need | Understand diagnosis without unnecessary alarm |
 
 ## 3. Health Literacy Challenges
 
 | Health Literacy Dimension | Challenge for Otto | Reason |
 |---|---|---|
-| Understanding | Difficulty understanding medical terminology and dense explanations | Low health literacy, low medical knowledge, education level |
-| Understanding | Difficulty retaining key information | Possible working memory difficulty and older age |
+| Understand | Difficulty understanding medical terminology and dense explanations | Low health literacy, low medical knowledge, education level |
+| Understand | Difficulty retaining key information | Possible memory difficulty and older age |
 | Understanding | Difficulty processing long or complex explanations | Possible processing speed difficulty |
-| Appraising | Difficulty evaluating the seriousness of CLL calmly | High worry / anxiety |
-| Appraising | Difficulty interpreting prognosis | High uncertainty |
+| Appraise | Difficulty evaluating the seriousness of CLL calmly | High worry / anxiety |
+| Appraise | Difficulty interpreting prognosis | High uncertainty |
 | Applying | Not the primary focus of this slice | The current slice focuses on understanding and appraising diagnosis information |
 
 ## 4. Selected Factors and Weighted Relationships
 
 | Factor                   | Health Literacy Dimension | Weight | Direction | Effect on Health Literacy |
 |--------------------------|---|---:|---|---|
-| High worry / anxiety     | Appraising | 0.85 | Negative | Makes information feel threatening and harder to evaluate calmly |
-| High uncertainty         | Appraising | 0.80 | Negative | Makes prognosis and disease meaning harder to interpret |
-| Low health literacy      | Understanding | 0.90 | Negative | Reduces ability to understand standard medical explanations |
-| Low medical knowledge    | Understanding | 0.85 | Negative | Makes technical terminology difficult to process |
-| Elderly age 65+          | Understanding | 0.65 | Negative | Requires accessibility-oriented presentation |
-| Working memory deficit   | Understanding | 0.75 | Negative | Reduces retention of key information |
-| Processing speed deficit | Understanding | 0.60 | Negative | Requires slower-paced, stepwise explanations |
-| Low educational level    | Understanding | 0.70 | Negative | Requires simpler syntax and shorter text blocks |
+| High worry / anxiety     | Appraise | 0.85 | Negative | Makes information feel threatening and harder to evaluate calmly |
+| High uncertainty         | Appraise | 0.80 | Negative | Makes prognosis and disease meaning harder to interpret |
+| Low health literacy      | Understand | 0.90 | Negative | Reduces ability to understand standard medical explanations |
+| Low medical knowledge    | Understand | 0.85 | Negative | Makes technical terminology difficult to process |
+| Elderly age 65+          | Understand | 0.65 | Negative | Requires accessibility-oriented presentation |
+| Memory deficit           | Understand | 0.75 | Negative | Reduces retention of key information |
+| Processing speed deficit | Understand | 0.60 | Negative | Requires slower-paced, stepwise explanations |
+| Low educational level    | Understand | 0.70 | Negative | Requires simpler syntax and shorter text blocks |
 
 ## 5. Activated Content Adaptation Elements
 
 ### 5.1 Content – Good Practices
 
-| Exact adaptation instance | Triggering factor | How it should appear in the generated text |
-|---|---|---|
-| Reassurance (it's ok phrases) | High worry / anxiety | Add one calming sentence after explaining the diagnosis |
-| Positive information first | High worry / anxiety | Mention slow progression / monitoring early |
-| Order of information | High anxiety / uncertainty | Start with stabilizing information, then explain disease details |
-| Repeat Information | Working memory deficit / low health literacy | Repeat the main message near the end |
+| Exact adaptation instance | Triggering factor                    | How it should appear in the generated text |
+|---|--------------------------------------|---|
+| Reassurance (it's ok phrases) | High worry / anxiety                 | Add one calming sentence after explaining the diagnosis |
+| Positive information first | High worry / anxiety                 | Mention slow progression / monitoring early |
+| Order of information | High anxiety / uncertainty           | Start with stabilizing information, then explain disease details |
+| Repeat Information | Memory deficit / low health literacy | Repeat the main message near the end |
 
 ### 5.2 Content – Lexical
 
@@ -128,18 +128,18 @@ This use case demonstrates how HEALIE connects patient-specific factors to concr
 
 The reasoning pathway is:
 
-| Patient factor | Health literacy effect | Activated adaptation element | Expected text change |
-|---|---|---|---|
-| High worry / anxiety | Appraising difficulty | Reassurance (it's ok phrases) | Add a calming sentence |
-| High worry / anxiety | Appraising difficulty | Positive information first | Mention slow progression early |
-| High uncertainty | Appraising difficulty | Order of information | Present stabilizing information before detailed disease information |
-| Low medical knowledge | Understanding difficulty | Simplified Medical Terms | Use “blood cancer” instead of “hematological malignancy” |
-| Low health literacy | Understanding difficulty | Simplified Language | Use common words and direct explanations |
-| Working memory deficit | Understanding difficulty | Repeat Information | Repeat the central message near the end |
-| Working memory deficit | Understanding difficulty | Bullet Points/Lists | Summarize key information in bullets |
-| Processing speed deficit | Understanding difficulty | Enumeration (Steps) | Present information step by step |
-| Low educational level | Understanding difficulty | Secondary sentences | Avoid long subordinate clauses |
-| Low health literacy / anxiety | Understanding and Appraising difficulty | No conditionals | Avoid complex conditional structures |
+| Patient factor                | Health literacy effect | Activated adaptation element | Expected text change |
+|-------------------------------|---|---|---|
+| High worry / anxiety          | Appraise difficulty | Reassurance (it's ok phrases) | Add a calming sentence |
+| High worry / anxiety          | Appraise difficulty | Positive information first | Mention slow progression early |
+| High uncertainty              | Appraise difficulty | Order of information | Present stabilizing information before detailed disease information |
+| Low medical knowledge         | Understand difficulty | Simplified Medical Terms | Use “blood cancer” instead of “hematological malignancy” |
+| Low health literacy           | Understand difficulty | Simplified Language | Use common words and direct explanations |
+| Memory deficit                | Understand difficulty | Repeat Information | Repeat the central message near the end |
+| Memory deficit                | Understand difficulty | Bullet Points/Lists | Summarize key information in bullets |
+| Processing speed deficit      | Understand difficulty | Enumeration (Steps) | Present information step by step |
+| Low educational level         | Understand difficulty | Secondary sentences | Avoid long subordinate clauses |
+| Low health literacy / anxiety | Understand and Appraise difficulty | No conditionals | Avoid complex conditional structures |
 
 This makes the personalization explainable and traceable through the Knowledge Graph. Each adaptation is not selected generically, but activated by a specific patient factor and connected to a specific health literacy challenge.
 

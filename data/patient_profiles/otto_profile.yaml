@@ -1,0 +1,37 @@
+patient_id: otto
+name: Otto
+
+demographics:
+  age: 75
+  age_group: older
+  education_level: middle_school_graduate
+
+clinical_profile:
+  condition_id: cll
+  condition_name: Chronic Lymphocytic Leukemia
+  conditio_abbreviation: CLL
+
+health_literacy_profile:
+  health_literacy_level: low
+  medical_knowledge: low
+  main_communication_need: understand diagnosis without unnecessary alarm
+
+emotional_profile:
+  worry_anxiety: high
+  uncertainty: high
+
+cognitive_profile:
+  memory: possible_deficit
+  processing_speed: prossible_deficit
+
+focus_dimensions:
+  - Understand
+  - Appraise
+
+out_of_scope_dimensions:
+  - Access
+  - Apply
+
+notes:
+  - This profile is frozen for the Otto vertical slice
+  - Memory and procesing speed deficits are inferred for the demo and require expert validation
