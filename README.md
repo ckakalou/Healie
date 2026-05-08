@@ -1,4 +1,4 @@
-# HEALIE 🧠💙
+# HEALIE 🪼
 ### HEALth Information Enhancement
 
 <p align="center">
@@ -27,7 +27,7 @@ HEALIE aims to transform health literacy from a theoretical concept into a **com
 
 ---
 
-## 🧠 Core Contribution
+## 🔮 Core Contribution
 
 The main contribution of HEALIE is a **weighted Knowledge Graph of health literacy**, where:
 
@@ -57,7 +57,7 @@ The system integrates graph traversal, ranking, embeddings, and prompt engineeri
 
 ---
 
-## 📁 Repository Structure
+## 📂 Repository Structure
 
 ### 🧩 `ontology/`
 - HEALIE ontology (Protégé exports)
@@ -75,7 +75,7 @@ The system integrates graph traversal, ranking, embeddings, and prompt engineeri
 #### `patient_profiles/`
 - Structured patient cases (e.g. Otto, Maya)
 
-#### `relationship_registry/`
+#### 🔀`relationship_registry/`
 - Weighted relationships:
   - factor → HL dimension
   - factor → adaptation strategy
@@ -90,7 +90,7 @@ The system integrates graph traversal, ranking, embeddings, and prompt engineeri
 #### `import/`
 - CSV files for graph population
 
-#### `cypher/`
+#### 🌀 `cypher/`
 - Graph creation scripts
 - Query templates
 - Weighted traversal queries
@@ -99,21 +99,21 @@ The system integrates graph traversal, ranking, embeddings, and prompt engineeri
 
 ### 🤖 `rag_pipeline/`
 
-#### `retrieval/`
+#### 📍`retrieval/`
 - Neo4j query execution
 - Context extraction
 
-#### `prompts/`
+#### 🛤️`prompts/`
 - Prompt templates
 - Adaptation-aware generation instructions
 
-#### `generation/`
+#### ✨`generation/`
 - LLM interaction
 - Output post-processing
 
 ---
 
-### 🖥️ `demo_streamlit/`
+### 💻 `demo_streamlit/`
 - Interactive demo interface
 - Use case selection (Otto, Maya, etc.)
 - Visualisation of:
@@ -122,7 +122,7 @@ The system integrates graph traversal, ranking, embeddings, and prompt engineeri
 
 ---
 
-### 📈 `evaluation/`
+### 🔬  `evaluation/`
 - Evaluation scripts and results
 - Metrics:
   - Readability
@@ -138,7 +138,7 @@ The system integrates graph traversal, ranking, embeddings, and prompt engineeri
 - Diagrams
 - System design
 
-#### `use_cases/`
+#### 👥`use_cases/`
 - Detailed descriptions of:
   - Otto (elderly, low HL, high worry)
   - Maya (child)
