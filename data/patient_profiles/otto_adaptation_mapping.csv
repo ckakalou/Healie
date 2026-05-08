@@ -1,16 +1,16 @@
-source_factor,target_hl_dimension,adaptation_category,adaptation_instance,relationship_type,activation_weight,text_effect
-High worry / anxiety,Appraising,Content - Good Practices,Reassurance (it's ok phrases),ACTIVATES,0.85,Add one calming sentence after explaining the diagnosis
-High worry / anxiety,Appraising,Content - Good Practices,Positive information first,ACTIVATES,0.85,Mention slow progression and regular monitoring early
-High uncertainty,Appraising,Content - Good Practices,Order of information,ACTIVATES,0.80,Start with stabilizing information then explain disease details
-Working memory deficit,Understanding,Content - Good Practices,Repeat Information,ACTIVATES,0.75,Repeat the main message near the end
-Low medical knowledge,Understanding,Content - Lexical,Simplified Medical Terms,ACTIVATES,0.85,Use blood cancer instead of hematological malignancy
-Low health literacy,Understanding,Content - Lexical,Simplified Language,ACTIVATES,0.90,Use common words and direct explanations
-Low health literacy,Understanding,Content - Lexical,Complexity of medical terms,ACTIVATES,0.90,Explain CLL immediately after naming it
-Elderly age 65+,Understanding,Morphology / Formatting,Font Size,ACTIVATES,0.65,Support larger readable text in the demo or output
-Low health literacy,Understanding,Morphology / Formatting,Text block size,ACTIVATES,0.90,Use short paragraphs and avoid dense text blocks
-Processing speed deficit,Understanding,Morphology / Formatting,Enumeration (Steps),ACTIVATES,0.60,Present key information step by step
-Working memory deficit,Understanding,Morphology / Formatting,Bullet Points/Lists,ACTIVATES,0.75,Summarize key information as bullet points
-Working memory deficit,Understanding,Morphology / Formatting,Bold,ACTIVATES,0.75,Bold only the most important terms or messages
-Low educational level,Understanding,Content - Syntax & Grammar,Secondary sentences,ACTIVATES,0.70,Avoid long subordinate clauses
-Low health literacy,Understanding,Content - Syntax & Grammar,No conditionals,ACTIVATES,0.90,Avoid complex if-then constructions where possible
-High worry / anxiety,Appraising,Content - Syntax & Grammar,No conditionals,ACTIVATES,0.85,Avoid conditional phrasing that may increase anxiety
+source_factor,target_hl_dimension,adaptation_category,adaptation_instance,relationship_type,activation_weight,text_effect,evidence_type,evidence_status,source,validated,needs_validation,confidence,notes
+High worry / anxiety,Appraise,Content - Good Practices,Reassurance (it's ok phrases),ACTIVATES,0.85,Add one calming sentence after explaining the diagnosis,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium_high,Directly addresses emotional distress
+High worry / anxiety,Appraise,Content - Good Practices,Positive information first,ACTIVATES,0.85,Mention slow progression and regular monitoring early,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium_high,Reduces unnecessary alarm
+High uncertainty,Appraise,Content - Good Practices,Order of information,ACTIVATES,0.80,Start with stabilizing information then explain disease details,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium_high,Supports appraisal of prognosis
+Working memory deficit,Understand,Content - Good Practices,Repeat Information,ACTIVATES,0.75,Repeat the main message near the end,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium,Supports retention
+Low medical knowledge,Understand,Content - Lexical,Simplified Medical Terms,ACTIVATES,0.85,Use blood cancer instead of hematological malignancy,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,high,Canonical HEALIE lexical adaptation
+Low health literacy,Understand,Content - Lexical,Simplified Language,ACTIVATES,0.90,Use common words and direct explanations,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,high,Core low-HL adaptation
+Low health literacy,Understand,Content - Lexical,Complexity of medical terms,ACTIVATES,0.90,Explain CLL immediately after naming it,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,high,Prevents unexplained terminology
+Elderly age 65+,Understand,Morphology / Formatting,Font Size,ACTIVATES,0.65,Support larger readable text in the demo or output,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium,Accessibility-oriented presentation
+Low health literacy,Understand,Morphology / Formatting,Text block size,ACTIVATES,0.90,Use short paragraphs and avoid dense text blocks,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,high,Reduces cognitive load
+Processing speed deficit,Understand,Morphology / Formatting,Enumeration (Steps),ACTIVATES,0.60,Present key information step by step,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium,Supports slower processing
+Working memory deficit,Understand,Morphology / Formatting,Bullet Points/Lists,ACTIVATES,0.75,Summarize key information as bullet points,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium_high,Supports recall and scanning
+Working memory deficit,Understand,Morphology / Formatting,Bold,ACTIVATES,0.75,Bold only the most important terms or messages,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium,Useful but should be used sparingly
+Low educational level,Understand,Content - Syntax & Grammar,Secondary sentences,ACTIVATES,0.70,Avoid long subordinate clauses,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium,Reduces syntactic complexity
+Low health literacy,Understand,Content - Syntax & Grammar,No conditionals,ACTIVATES,0.90,Avoid complex if-then constructions where possible,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium_high,Reduces reasoning burden
+High worry / anxiety,Appraise,Content - Syntax & Grammar,No conditionals,ACTIVATES,0.85,Avoid conditional phrasing that may increase anxiety,expert_mapping,expert_informed_provisional,expert_selection_workbook,false,true,medium,Avoids unnecessarily alarming uncertainty framing

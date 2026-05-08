@@ -17,12 +17,26 @@ health_literacy_profile:
   main_communication_need: understand diagnosis without unnecessary alarm
 
 emotional_profile:
-  worry_anxiety: high
-  uncertainty: high
+  worry_anxiety:
+    value: high
+    evidence_status: defined_in_use_case
+    needs_validation: false
+  uncertainty:
+    value: high
+    evidence_status: defined_in_use_case
+    needs_validation: false
 
 cognitive_profile:
-  memory: possible_deficit
-  processing_speed: possible_deficit
+  memory:
+    value: possible_deficit
+    evidence_status: inferred_for_vertical_slice
+    needs_validation: true
+    validation_note: Requires expert confirmation or future patient assessment.
+  processing_speed:
+    value: possible_deficit
+    evidence_status: inferred_for_vertical_slice
+    needs_validation: true
+    validation_note: Requires expert confirmation or future patient assessment.
 
 focus_dimensions:
   - Understand
@@ -31,6 +45,13 @@ focus_dimensions:
 out_of_scope_dimensions:
   - Access
   - Apply
+
+metadata:
+  slice: otto_vertical_slice
+  version: v0.1
+  status: provisional
+  created_for: two_week_vertical_slice_demo
+  validation_level: prototype
 
 notes:
   - This profile is frozen for the Otto vertical slice
