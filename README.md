@@ -2,7 +2,7 @@
 ### HEALth Information Enhancement
 
 <p align="center">
-  <img src="docs/assets/HealieLogoStartingForGithub.png" alt="HEALIE Logo" width="250"/>
+  <img src="docs/assets/logos/healie_official_logo_transparent.png" alt="HEALIE Logo" width="250"/>
 </p>
 
 HEALIE is a **Knowledge Graph-driven system for personalised medical content generation**, designed to support **patient empowerment** through improved **health literacy**.

@@ -1,0 +1,15 @@
+| Role             |                         Colour | Hex       |
+| ---------------- | -----------------------------: | --------- |
+| Primary violet   |             Soft HEALIE violet | `#6C63F4` |
+| Periwinkle blue  |            Main jellyfish blue | `#6EA8FF` |
+| Clinical cyan    |         Light AI/health accent | `#48CFF4` |
+| Aqua teal        |   Main “ie” / traversal accent | `#28C7BE` |
+| Pale mint        |                 Soft highlight | `#A7E7E0` |
+| Lavender mist    | Background glow / subtle nodes | `#C7B7FF` |
+| Deep blue-violet |              Optional contrast | `#4E5BEF` |
+| Near-white       |                     Background | `#FAFCFF` |
+
+background: linear-gradient(90deg, #6C63F4 0%, #6EA8FF 45%, #48CFF4 70%, #28C7BE 100%);
+Best match: Comfortaa Light
+More professional/academic-tech alternative: Quicksand Light
+Cleaner web UI alternative: Nunito Sans ExtraLight
