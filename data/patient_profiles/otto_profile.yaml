@@ -1,58 +1,91 @@
 patient_id: otto
 name: Otto
-
 demographics:
   age: 75
-  age_group: older
+  age_group: elderly_65_plus
   education_level: middle_school_graduate
-
 clinical_profile:
   condition_id: cll
   condition_name: Chronic Lymphocytic Leukemia
   condition_abbreviation: CLL
-
 health_literacy_profile:
   health_literacy_level: low
   medical_knowledge: low
   main_communication_need: understand diagnosis without unnecessary alarm
-
-emotional_profile:
-  worry_anxiety:
-    value: high
-    evidence_status: defined_in_use_case
-    needs_validation: false
-  uncertainty:
-    value: high
-    evidence_status: defined_in_use_case
-    needs_validation: false
-
-cognitive_profile:
-  memory:
-    value: possible_deficit
-    evidence_status: inferred_for_vertical_slice
-    needs_validation: true
-    validation_note: Requires expert confirmation or future patient assessment.
-  processing_speed:
-    value: possible_deficit
-    evidence_status: inferred_for_vertical_slice
-    needs_validation: true
-    validation_note: Requires expert confirmation or future patient assessment.
-
 focus_dimensions:
-  - Understand
-  - Appraise
-
+- Understand
+- Appraise
 out_of_scope_dimensions:
-  - Access
-  - Apply
-
+- Access
+- Apply
+factor_scores:
+- factor_id: worry_anxiety
+  factor_name: Worry / anxiety
+  factor_value: 0.85
+  factor_value_type: numeric
+  evidence_status: defined_in_use_case
+  needs_validation: false
+  notes: Otto's worry/anxiety score for the vertical slice.
+- factor_id: uncertainty
+  factor_name: Uncertainty
+  factor_value: 0.8
+  factor_value_type: numeric
+  evidence_status: defined_in_use_case
+  needs_validation: false
+  notes: Otto's uncertainty score for the vertical slice.
+- factor_id: health_literacy_level
+  factor_name: Health literacy level
+  factor_value: low
+  factor_value_type: categorical
+  evidence_status: defined_in_use_case
+  needs_validation: true
+  notes: Represented both as a profile attribute and as a reasoning factor.
+- factor_id: medical_knowledge
+  factor_name: Medical knowledge
+  factor_value: low
+  factor_value_type: categorical
+  evidence_status: defined_in_use_case
+  needs_validation: false
+  notes: Patient-specific value used to activate lexical simplification.
+- factor_id: age
+  factor_name: Age
+  factor_value: elderly_65_plus
+  factor_value_type: categorical
+  evidence_status: defined_in_use_case
+  needs_validation: false
+  notes: Exact age is stored in demographics; age group is used for reasoning.
+- factor_id: memory
+  factor_name: Memory
+  factor_value: possible_deficit
+  factor_value_type: inferred_categorical
+  evidence_status: inferred_for_vertical_slice
+  needs_validation: true
+  notes: Inferred factor requiring expert validation or future patient assessment.
+- factor_id: processing_speed
+  factor_name: Processing speed
+  factor_value: possible_deficit
+  factor_value_type: inferred_categorical
+  evidence_status: inferred_for_vertical_slice
+  needs_validation: true
+  notes: Inferred factor requiring expert validation or future patient assessment.
+- factor_id: educational_level
+  factor_name: Educational level
+  factor_value: middle_school_graduate
+  factor_value_type: categorical
+  evidence_status: defined_in_use_case
+  needs_validation: false
+  notes: Patient-specific value used to activate simpler sentence structure.
 metadata:
   slice: otto_vertical_slice
-  version: v0.1
+  version: v0.2
   status: provisional
   created_for: two_week_vertical_slice_demo
   validation_level: prototype
-
-notes:
-  - This profile is frozen for the Otto vertical slice
-  - Memory and processing speed deficits are inferred for the demo and require expert validation
+  model_alignment: Aligned with final Day 3 Neo4j graph pattern and weight distinction.
+  notes:
+  - This profile is frozen for the Otto vertical slice.
+  - Patient-specific values are stored as factor_scores and should map to HAS_FACTOR_SCORE
+    relationships in Neo4j.
+  - Stable influence_weight, activation_weight, and modification_weight values are
+    not patient-specific and are stored in the relationship registry files.
+  - Memory and processing speed are inferred for the demo and require expert validation.
