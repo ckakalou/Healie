@@ -11,18 +11,18 @@ This slice focuses only on Otto. It does not include additional patients, full o
 
 ## 2. Patient Profile
 
-| Attribute               | Value |
-|-------------------------|---|
-| Patient name            | Otto |
-| Age                     | 75 |
-| Education               | Middle-school graduate |
-| Condition               | Chronic Lymphocytic Leukemia (CLL) |
-| Health literacy level   | Low |
-| Worry / Anxiety         | High|
-| Uncertainty             | High |
-| Medical knowledge       | Low |
-| Cognitive profile       | Possible memory and processing speed difficulties |
-| Main communication need | Understand diagnosis without unnecessary alarm |
+| Attribute              | Value                                             |
+|------------------------|---------------------------------------------------|
+| Patient name           | Otto                                              |
+| Age_Group              | Elderly                                           |
+| Education              | Middle-school graduate                            |
+| Condition              | Chronic Lymphocytic Leukemia (CLL)                |
+| Health literacy level  | Low                                               |
+| Worry / Anxiety        | High                                              |
+| Uncertainty            | High                                              |
+| Medical knowledge      | Low                                               |
+| Cognitive profile      | Possible memory and processing speed difficulties |
+| Main communication need | Understand diagnosis without unnecessary alarm    |
 
 ## 3. Health Literacy Challenges
 
