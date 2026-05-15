@@ -1,6 +1,22 @@
 # Otto Generated Output
 
-## Generated content
+## 1. LLM-only personalised baseline
+
+# LLM-only personalised explanation for Otto
+
+Hi Otto, I want to help you understand what Chronic Lymphocytic Leukemia, or CLL, means. CLL is a type of blood cancer that affects a kind of white blood cell called lymphocytes. These cells are important for your immune system, which helps your body fight infections.
+
+CLL usually develops slowly, and it is more common in older adults like yourself. When someone is diagnosed with CLL, they may not need treatment right away. Instead, doctors often keep an eye on it with regular check-ups and blood tests to see how things are going.
+
+It's important to know that CLL is not something that spreads from person to person, so you don’t have to worry about it affecting your loved ones. If you have any questions or concerns about your diagnosis, your doctor is the best person to talk to. They can explain what CLL means for you and help you understand your situation better.
+
+# Brief explanation of your adaptation choices
+
+I simplified the explanation of CLL to ensure it is easy for Otto to understand, considering his low medical knowledge and health literacy. I focused on key points about CLL, its nature, and monitoring, while avoiding complex medical terms or alarming details. I also reassured him about the non-contagious nature of the disease to help ease his anxiety.
+
+---
+
+## 2. HEALIE KG-guided output
 
 # Generic baseline explanation
 
@@ -8,39 +24,39 @@ Chronic Lymphocytic Leukemia, often called CLL, is a type of blood cancer that a
 
 # HEALIE-adapted explanation for Otto
 
-Chronic Lymphocytic Leukemia (CLL) is a type of **blood cancer**. It affects a kind of white blood cell called lymphocytes. 
+Chronic Lymphocytic Leukemia (CLL) is a type of **blood cancer**. It affects **lymphocytes**, which are important white blood cells in your body. 
 
-CLL usually develops slowly. Many people with CLL do not need treatment right away. Instead, doctors will monitor your health with regular check-ups and blood tests. 
+CLL usually develops **slowly**. Many people with CLL do not need treatment right away. Instead, doctors will keep an eye on it with regular check-ups and blood tests. 
 
-Here are some important points about CLL:
+Here are some key points about CLL:
 
 - CLL is more common in older adults.
 - It is not spread through everyday contact.
-- Treatment decisions depend on your symptoms and test results.
+- Treatment decisions depend on your symptoms and blood test results.
 
-It’s okay to feel uncertain. You will have regular check-ups to help keep track of your health. Remember, you are not alone in this, and your doctor is there to help explain what CLL means for you.
+It is okay to feel concerned. You will have regular monitoring to help manage your health. 
 
-In summary, CLL is a slow-developing blood cancer that can be monitored without immediate treatment. 
+Remember, CLL develops slowly, and many people do not need immediate treatment. 
 
 # Adaptation trace
 
 - Complexity of medical terms: Explained CLL immediately after naming it.
 - Simplified Language: Used common words and direct explanations.
 - No conditionals: Avoided complex if-then constructions.
-- Text block size: Used short paragraphs and avoided dense text blocks.
+- Text block size: Used short paragraphs.
 - Simplified Medical Terms: Used "blood cancer" instead of "hematological malignancy."
 - Bold: Highlighted important terms.
 - Bullet Points/Lists: Summarized key information as bullet points.
-- Repeat Information: Repeated the main message near the end.
+- Repeat Information: Repeated the main message about slow progression and monitoring.
 - Positive information first: Mentioned slow progression and regular monitoring early.
-- Reassurance (it's ok phrases): Added a calming sentence after explaining the diagnosis.
+- Reassurance (it's ok phrases): Added a calming sentence about regular monitoring.
 - Secondary sentences: Avoided long subordinate clauses.
-- Order of information: Started with stabilizing information before explaining details.
+- Order of information: Started with stabilizing information.
 - Enumeration (Steps): Presented key information step by step.
 
 ---
 
-## Reasoning report used
+## 3. Reasoning report used for KG-guided output
 
 # Otto Reasoning Report
 
@@ -255,7 +271,7 @@ The reasoning separates Otto-specific factor values from stable HEALIE model wei
 
 ---
 
-## Machine-readable reasoning object used
+## 4. Machine-readable reasoning object used
 
 ```python
 {'profile': {'patient_id': 'otto',
@@ -516,7 +532,65 @@ The reasoning separates Otto-specific factor values from stable HEALIE model wei
 
 ---
 
-## Prompt used
+## 5. LLM-only baseline prompt used
+
+```text
+You are generating patient-facing medical content.
+
+Use only the controlled clinical facts below.
+Do not add new medical facts.
+Do not add treatment advice beyond the provided facts.
+Do not mention survival rates, prognosis statistics, medication names, or disease stages unless they are included in the controlled facts.
+
+Controlled clinical facts:
+# Controlled clinical facts: Chronic Lymphocytic Leukemia (CLL)
+
+- Chronic Lymphocytic Leukemia is often shortened to CLL.
+- CLL is a type of blood cancer.
+- CLL affects lymphocytes, which are a type of white blood cell.
+- CLL usually develops slowly.
+- CLL is more common in older adults.
+- Some people with CLL do not need treatment immediately after diagnosis.
+- Doctors may monitor CLL with regular check-ups and blood tests.
+- Treatment decisions depend on the person's symptoms, blood test results, and clinical assessment.
+- CLL is not spread through everyday contact.
+- A doctor is the right person to explain what CLL means for an individual patient.
+
+Patient factors:
+- Patient name: Otto
+- Age group: elderly_65_plus
+- Education level: middle_school_graduate
+- Condition: Chronic Lymphocytic Leukemia (CLL)
+- Health literacy level: low
+- Worry / anxiety: high
+- Uncertainty: high
+- Medical knowledge: low
+- Memory: possible difficulty
+- Processing speed: possible difficulty
+- Main communication need: understand diagnosis without unnecessary alarm
+
+Task:
+Generate a patient-friendly explanation of CLL for Otto.
+
+Important:
+You are given Otto's factors, but you are not given a Knowledge Graph, adaptation rules, adaptation elements, weights, or reasoning pathway.
+
+Use your own judgement to adapt the explanation.
+
+Use this structure exactly:
+
+# LLM-only personalised explanation for Otto
+
+[explanation here]
+
+# Brief explanation of your adaptation choices
+
+[brief explanation here]
+```
+
+---
+
+## 6. KG-guided HEALIE prompt used
 
 ```text
 You are HEALIE, a Knowledge Graph-guided system for generating patient-facing medical explanations.

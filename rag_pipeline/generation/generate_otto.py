@@ -149,13 +149,22 @@ def call_llm(prompt: str) -> str:
 
 def save_generated_output(
     output_path: Path,
-    generated_text: str,
-    prompt: str,
+    llm_only_output: str,
+    kg_guided_output: str,
+    llm_only_prompt: str,
+    kg_guided_prompt: str,
     reasoning_report: str,
     reasoning_object: dict[str, Any],
 ) -> None:
     """
-    Save generated output with provenance information.
+    Save generated outputs with provenance information.
+
+    The file includes:
+    1. LLM-only personalised baseline
+    2. HEALIE KG-guided output
+    3. Reasoning report used
+    4. Machine-readable reasoning object
+    5. Prompts used
     """
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -164,19 +173,25 @@ def save_generated_output(
     content_parts = [
         "# Otto Generated Output",
         "",
-        "## Generated content",
+        "## 1. LLM-only personalised baseline",
         "",
-        generated_text,
+        llm_only_output,
         "",
         "---",
         "",
-        "## Reasoning report used",
+        "## 2. HEALIE KG-guided output",
+        "",
+        kg_guided_output,
+        "",
+        "---",
+        "",
+        "## 3. Reasoning report used for KG-guided output",
         "",
         reasoning_report,
         "",
         "---",
         "",
-        "## Machine-readable reasoning object used",
+        "## 4. Machine-readable reasoning object used",
         "",
         "```python",
         reasoning_object_text,
@@ -184,17 +199,39 @@ def save_generated_output(
         "",
         "---",
         "",
-        "## Prompt used",
+        "## 5. LLM-only baseline prompt used",
         "",
         "```text",
-        prompt,
+        llm_only_prompt,
+        "```",
+        "",
+        "---",
+        "",
+        "## 6. KG-guided HEALIE prompt used",
+        "",
+        "```text",
+        kg_guided_prompt,
         "```",
         "",
     ]
 
     content = "\n".join(content_parts)
-
     output_path.write_text(content, encoding="utf-8")
+
+def build_llm_only_baseline_prompt(
+    prompt_template: str,
+    clinical_facts: str,
+) -> str:
+    """
+    Fill the LLM-only personalised baseline prompt.
+
+    This prompt gives the model Otto's factors, but does not provide
+    KG-derived adaptation elements, weights, text-feature mappings,
+    or reasoning pathways.
+    """
+    return prompt_template.format(
+        clinical_facts=clinical_facts,
+    )
 
 def main() -> None:
     print("Starting Otto generation...")
@@ -203,29 +240,47 @@ def main() -> None:
     load_project_env(project_root)
 
     clinical_facts_path = project_root / "data" / "clinical_content" / "cll_basic_facts.md"
-    prompt_template_path = (
+
+    kg_guided_prompt_template_path = (
         project_root / "rag_pipeline" / "prompts" / "otto_generation_prompt.txt"
     )
+
+    llm_only_prompt_template_path = (
+        project_root / "rag_pipeline" / "prompts" / "otto_llm_only_baseline_prompt.txt"
+    )
+
     output_path = project_root / "docs" / "use_cases" / "otto_generated_output.md"
 
     print(f"Loading clinical facts from: {clinical_facts_path}")
     clinical_facts = read_text_file(clinical_facts_path)
 
-    print(f"Loading prompt template from: {prompt_template_path}")
-    prompt_template = read_text_file(prompt_template_path)
+    print(f"Loading KG-guided prompt template from: {kg_guided_prompt_template_path}")
+    kg_guided_prompt_template = read_text_file(kg_guided_prompt_template_path)
+
+    print(f"Loading LLM-only baseline prompt template from: {llm_only_prompt_template_path}")
+    llm_only_prompt_template = read_text_file(llm_only_prompt_template_path)
 
     print("Generating Otto reasoning bundle...")
     reasoning_bundle = generate_otto_reasoning_bundle()
 
-    print("Building generation prompt...")
-    prompt = build_generation_prompt(
-        prompt_template=prompt_template,
+    print("Building LLM-only baseline prompt...")
+    llm_only_prompt = build_llm_only_baseline_prompt(
+        prompt_template=llm_only_prompt_template,
+        clinical_facts=clinical_facts,
+    )
+
+    print("Calling LLM for LLM-only personalised baseline...")
+    llm_only_output = call_llm(llm_only_prompt)
+
+    print("Building KG-guided HEALIE prompt...")
+    kg_guided_prompt = build_generation_prompt(
+        prompt_template=kg_guided_prompt_template,
         clinical_facts=clinical_facts,
         reasoning_bundle=reasoning_bundle,
     )
 
-    print("Calling LLM...")
-    generated_text = call_llm(prompt)
+    print("Calling LLM for KG-guided HEALIE output...")
+    kg_guided_output = call_llm(kg_guided_prompt)
 
     reasoning_object = {
         "profile": reasoning_bundle["profile"],
@@ -233,18 +288,19 @@ def main() -> None:
         "adaptation_instructions": reasoning_bundle["adaptation_instructions"],
     }
 
-    print("Saving generated output...")
+    print("Saving generated outputs...")
     save_generated_output(
         output_path=output_path,
-        generated_text=generated_text,
-        prompt=prompt,
+        llm_only_output=llm_only_output,
+        kg_guided_output=kg_guided_output,
+        llm_only_prompt=llm_only_prompt,
+        kg_guided_prompt=kg_guided_prompt,
         reasoning_report=reasoning_bundle["human_readable_report"],
         reasoning_object=reasoning_object,
     )
 
     print("Otto generation complete.")
     print(f"Saved generated output to: {output_path}")
-
 
 if __name__ == "__main__":
     main()
