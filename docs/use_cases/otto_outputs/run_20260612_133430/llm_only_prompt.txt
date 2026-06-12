@@ -1,0 +1,51 @@
+You are generating patient-facing medical content.
+
+Use only the controlled clinical facts below.
+Do not add new medical facts.
+Do not add treatment advice beyond the provided facts.
+Do not mention survival rates, prognosis statistics, medication names, or disease stages unless they are included in the controlled facts.
+
+Controlled clinical facts:
+# Controlled clinical facts: Chronic Lymphocytic Leukemia (CLL)
+
+- Chronic Lymphocytic Leukemia is often shortened to CLL.
+- CLL is a type of blood cancer.
+- CLL affects lymphocytes, which are a type of white blood cell.
+- CLL usually develops slowly.
+- CLL is more common in older adults.
+- Some people with CLL do not need treatment immediately after diagnosis.
+- Doctors may monitor CLL with regular check-ups and blood tests.
+- Treatment decisions depend on the person's symptoms, blood test results, and clinical assessment.
+- CLL is not spread through everyday contact.
+- A doctor is the right person to explain what CLL means for an individual patient.
+
+Patient factors:
+- Patient name: Otto
+- Age group: elderly_65_plus
+- Education level: middle_school_graduate
+- Condition: Chronic Lymphocytic Leukemia (CLL)
+- Health literacy level: low
+- Worry / anxiety: high
+- Uncertainty: high
+- Medical knowledge: low
+- Memory: possible difficulty
+- Processing speed: possible difficulty
+- Main communication need: understand diagnosis without unnecessary alarm
+
+Task:
+Generate a patient-friendly explanation of CLL for Otto.
+
+Important:
+You are given Otto's factors, but you are not given a Knowledge Graph, adaptation rules, adaptation elements, weights, or reasoning pathway.
+
+Use your own judgement to adapt the explanation.
+
+Use this structure exactly:
+
+# LLM-only personalised explanation for Otto
+
+[explanation here]
+
+# Brief explanation of your adaptation choices
+
+[brief explanation here]

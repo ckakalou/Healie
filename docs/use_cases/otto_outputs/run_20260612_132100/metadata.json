@@ -1,0 +1,10 @@
+{
+  "run_directory": "C:\\Users\\ckakalou\\PycharmProjects\\Healie\\docs\\use_cases\\otto_outputs\\run_20260612_132100",
+  "model": "gpt-4o-mini",
+  "temperature": 0,
+  "conditions": [
+    "LLM-only personalised baseline",
+    "HEALIE KG-guided output"
+  ],
+  "notes": "LLM-only receives Otto factors directly. KG-guided receives graph-derived reasoning and adaptation instructions."
+}

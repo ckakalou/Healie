@@ -21,7 +21,12 @@ import os
 from pathlib import Path
 from pprint import pformat
 from typing import Any
-
+import json
+import os
+from datetime import datetime
+from pathlib import Path
+from pprint import pformat
+from typing import Any
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 
@@ -146,9 +151,26 @@ def call_llm(prompt: str) -> str:
     response = llm.invoke(prompt)
     return response.content
 
+def create_run_directory(project_root: Path) -> Path:
+    """
+    Create a timestamped archive directory for this generation run.
+    """
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    run_dir = (
+        project_root
+        / "docs"
+        / "use_cases"
+        / "otto_outputs"
+        / f"run_{timestamp}"
+    )
+
+    run_dir.mkdir(parents=True, exist_ok=False)
+    return run_dir
 
 def save_generated_output(
-    output_path: Path,
+    latest_output_path: Path,
+    run_dir: Path,
     llm_only_output: str,
     kg_guided_output: str,
     llm_only_prompt: str,
@@ -157,21 +179,68 @@ def save_generated_output(
     reasoning_object: dict[str, Any],
 ) -> None:
     """
-    Save generated outputs with provenance information.
+    Save generated outputs in two ways:
 
-    The file includes:
-    1. LLM-only personalised baseline
-    2. HEALIE KG-guided output
-    3. Reasoning report used
-    4. Machine-readable reasoning object
-    5. Prompts used
+    1. A timestamped archive folder for reproducibility.
+    2. A latest combined output file for quick inspection.
     """
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
     reasoning_object_text = pformat(reasoning_object, sort_dicts=False)
 
+    metadata = {
+        "run_directory": str(run_dir),
+        "model": MODEL_NAME,
+        "temperature": 0,
+        "conditions": [
+            "LLM-only personalised baseline",
+            "HEALIE KG-guided output",
+        ],
+        "notes": (
+            "LLM-only receives Otto factors directly. "
+            "KG-guided receives graph-derived reasoning and adaptation instructions."
+        ),
+    }
+
+    # Individual archived files
+    (run_dir / "llm_only_output.md").write_text(
+        llm_only_output,
+        encoding="utf-8",
+    )
+
+    (run_dir / "kg_guided_output.md").write_text(
+        kg_guided_output,
+        encoding="utf-8",
+    )
+
+    (run_dir / "reasoning_report.md").write_text(
+        reasoning_report,
+        encoding="utf-8",
+    )
+
+    (run_dir / "reasoning_object.py").write_text(
+        reasoning_object_text,
+        encoding="utf-8",
+    )
+
+    (run_dir / "llm_only_prompt.txt").write_text(
+        llm_only_prompt,
+        encoding="utf-8",
+    )
+
+    (run_dir / "kg_guided_prompt.txt").write_text(
+        kg_guided_prompt,
+        encoding="utf-8",
+    )
+
+    (run_dir / "metadata.json").write_text(
+        json.dumps(metadata, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    # Combined file
     content_parts = [
         "# Otto Generated Output",
+        "",
+        f"Archived run directory: `{run_dir}`",
         "",
         "## 1. LLM-only personalised baseline",
         "",
@@ -215,8 +284,21 @@ def save_generated_output(
         "",
     ]
 
-    content = "\n".join(content_parts)
-    output_path.write_text(content, encoding="utf-8")
+    combined_content = "\n".join(content_parts)
+
+    # Save full combined output inside the archive
+    (run_dir / "combined_output.md").write_text(
+        combined_content,
+        encoding="utf-8",
+    )
+
+    # Save latest combined output for easy viewing
+    latest_output_path.parent.mkdir(parents=True, exist_ok=True)
+    latest_output_path.write_text(
+        combined_content,
+        encoding="utf-8",
+    )
+
 
 def build_llm_only_baseline_prompt(
     prompt_template: str,
@@ -249,7 +331,14 @@ def main() -> None:
         project_root / "rag_pipeline" / "prompts" / "otto_llm_only_baseline_prompt.txt"
     )
 
-    output_path = project_root / "docs" / "use_cases" / "otto_generated_output.md"
+    latest_output_path = (
+            project_root
+            / "docs"
+            / "use_cases"
+            / "otto_generated_output_latest.md"
+    )
+
+    run_dir = create_run_directory(project_root)
 
     print(f"Loading clinical facts from: {clinical_facts_path}")
     clinical_facts = read_text_file(clinical_facts_path)
@@ -290,7 +379,8 @@ def main() -> None:
 
     print("Saving generated outputs...")
     save_generated_output(
-        output_path=output_path,
+        latest_output_path=latest_output_path,
+        run_dir=run_dir,
         llm_only_output=llm_only_output,
         kg_guided_output=kg_guided_output,
         llm_only_prompt=llm_only_prompt,
@@ -300,7 +390,8 @@ def main() -> None:
     )
 
     print("Otto generation complete.")
-    print(f"Saved generated output to: {output_path}")
+    print(f"Archived run saved to: {run_dir}")
+    print(f"Latest output saved to: {latest_output_path}")
 
 if __name__ == "__main__":
     main()

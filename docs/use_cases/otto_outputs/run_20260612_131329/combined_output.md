@@ -1,18 +1,20 @@
 # Otto Generated Output
 
+Archived run directory: `C:\Users\ckakalou\PycharmProjects\Healie\docs\use_cases\otto_outputs\run_20260612_131329`
+
 ## 1. LLM-only personalised baseline
 
 # LLM-only personalised explanation for Otto
 
-Hello Otto, I want to explain what Chronic Lymphocytic Leukemia, or CLL, means for you. CLL is a type of blood cancer that affects a kind of white blood cell called lymphocytes. These cells are important for your immune system, which helps your body fight infections.
+Hello Otto, I want to talk to you about your diagnosis of Chronic Lymphocytic Leukemia, which we often call CLL. CLL is a type of blood cancer that affects a kind of white blood cell called lymphocytes. These cells are important for your immune system, which helps your body fight off infections.
 
-CLL usually develops slowly, and it is more common in older adults like yourself. It's important to know that some people with CLL do not need treatment right away. Your doctor will keep an eye on your condition with regular check-ups and blood tests to see how you are doing.
+CLL usually develops slowly, and it is more common in older adults like yourself. It's important to know that some people with CLL do not need treatment right away after they are diagnosed. Your doctor will keep an eye on your condition with regular check-ups and blood tests. This means they will monitor how you are doing and decide on the best steps based on your symptoms and test results.
 
-You don’t need to worry about CLL spreading to others; it is not contagious. If you have any questions or concerns about your diagnosis, your doctor is the best person to talk to. They can help explain what CLL means for you and what steps might be needed.
+You do not need to worry about CLL spreading to others because it is not contagious. If you have any questions or concerns about what this means for you, your doctor is the best person to talk to. They can help explain everything in a way that makes sense for you.
 
 # Brief explanation of your adaptation choices
 
-I used simple language and avoided complex medical terms to ensure that Otto can understand the explanation without feeling overwhelmed. I emphasized the slow development of CLL and the fact that treatment may not be needed immediately to help reduce his anxiety. I also reassured him that CLL is not contagious, addressing his worries. Overall, the explanation is designed to be clear and supportive, considering his high levels of worry and uncertainty.
+I tailored the explanation to be clear and straightforward, using simple language to match Otto's low medical knowledge and education level. I focused on the key facts about CLL, emphasizing that it is a slow-developing condition and that immediate treatment is not always necessary. This approach aims to reduce Otto's anxiety and uncertainty while ensuring he understands his diagnosis without unnecessary alarm.
 
 ---
 
@@ -20,23 +22,23 @@ I used simple language and avoided complex medical terms to ensure that Otto can
 
 # Generic baseline explanation
 
-Chronic Lymphocytic Leukemia, often called CLL, is a type of blood cancer that affects lymphocytes, which are a kind of white blood cell. CLL usually develops slowly and is more common in older adults. Some people diagnosed with CLL may not need treatment right away, and doctors often monitor the condition with regular check-ups and blood tests.
+Chronic Lymphocytic Leukemia, often shortened to CLL, is a type of blood cancer that affects lymphocytes, which are a kind of white blood cell. CLL usually develops slowly and is more common in older adults. Some people diagnosed with CLL may not need treatment right away, and doctors often monitor the condition with regular check-ups and blood tests.
 
 # HEALIE-adapted explanation for Otto
 
-Chronic Lymphocytic Leukemia (CLL) is a type of **blood cancer**. It affects a kind of white blood cell called lymphocytes. 
+Chronic Lymphocytic Leukemia (CLL) is a type of blood cancer. It affects a kind of white blood cell called lymphocytes. 
 
-CLL usually develops slowly. This means that it may not cause problems right away. Many people with CLL do not need treatment immediately after being diagnosed. Instead, doctors can watch your health with regular check-ups and blood tests. 
+CLL usually develops slowly. This means it may not cause problems right away. Many people with CLL do not need treatment immediately. Doctors will keep an eye on it with regular check-ups and blood tests. 
 
 Here are some important points about CLL:
 
 - CLL is more common in older adults.
 - It is not spread through everyday contact.
-- Treatment decisions depend on your symptoms and blood test results.
+- Treatment decisions depend on symptoms and blood test results.
 
-It's okay to feel concerned. You will have regular check-ups to monitor your condition. Remember, CLL often progresses slowly. 
+It is okay to feel worried. You are not alone in this. Your doctor can explain what CLL means for you and help you understand your situation better. 
 
-In summary, CLL is a type of blood cancer that can be monitored without immediate treatment. 
+Remember, CLL usually develops slowly, and doctors will monitor it closely. 
 
 # Adaptation trace
 
@@ -45,13 +47,13 @@ In summary, CLL is a type of blood cancer that can be monitored without immediat
 - No conditionals: Avoided complex if-then constructions.
 - Text block size: Used short paragraphs and avoided dense text blocks.
 - Simplified Medical Terms: Used "blood cancer" instead of "hematological malignancy."
-- Bold: Highlighted important terms.
+- Bold: Emphasized important terms.
 - Bullet Points/Lists: Summarized key information as bullet points.
-- Repeat Information: Repeated the central message about CLL being monitored.
+- Repeat Information: Repeated the main message about slow progression and monitoring.
 - Positive information first: Mentioned slow progression and regular monitoring early.
-- Reassurance: Included a calming sentence about regular check-ups.
+- Reassurance (it's ok phrases): Added a calming sentence after explaining the diagnosis.
 - Secondary sentences: Avoided long subordinate clauses.
-- Font Size: Ensured readability for older adults.
+- Font Size: Supported larger readable text (implied for visual accessibility).
 - Order of information: Started with stabilizing information before explaining details.
 - Enumeration (Steps): Presented key information step by step.
 

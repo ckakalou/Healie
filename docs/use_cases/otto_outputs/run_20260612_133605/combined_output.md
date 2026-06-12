@@ -1,18 +1,20 @@
 # Otto Generated Output
 
+Archived run directory: `C:\Users\ckakalou\PycharmProjects\Healie\docs\use_cases\otto_outputs\run_20260612_133605`
+
 ## 1. LLM-only personalised baseline
 
 # LLM-only personalised explanation for Otto
 
-Hello Otto, I want to explain what Chronic Lymphocytic Leukemia, or CLL, means for you. CLL is a type of blood cancer that affects a kind of white blood cell called lymphocytes. These cells are important for your immune system, which helps your body fight infections.
+Hello Otto, I want to explain what Chronic Lymphocytic Leukemia, or CLL, means for you. CLL is a type of blood cancer that affects a kind of white blood cell called lymphocytes. These cells are important for your immune system, which helps your body fight off infections.
 
-CLL usually develops slowly, and it is more common in older adults like yourself. It's important to know that some people with CLL do not need treatment right away. Your doctor will keep an eye on your condition with regular check-ups and blood tests to see how you are doing.
+CLL usually develops slowly, and it is more common in older adults like yourself. When someone is diagnosed with CLL, they might not need treatment right away. Instead, doctors often keep an eye on the situation with regular check-ups and blood tests. This means you will have appointments where the doctor will check how you are doing and look at your blood to see if anything needs to be done.
 
-You don’t need to worry about CLL spreading to others; it is not contagious. If you have any questions or concerns about your diagnosis, your doctor is the best person to talk to. They can help explain what CLL means for you and what steps might be needed.
+It's important to know that CLL is not contagious, so you cannot catch it from someone else. If you have any questions or worries about what CLL means for you, your doctor is the best person to talk to. They can help explain everything in a way that makes sense for you.
 
 # Brief explanation of your adaptation choices
 
-I used simple language and avoided complex medical terms to ensure that Otto can understand the explanation without feeling overwhelmed. I emphasized the slow development of CLL and the fact that treatment may not be needed immediately to help reduce his anxiety. I also reassured him that CLL is not contagious, addressing his worries. Overall, the explanation is designed to be clear and supportive, considering his high levels of worry and uncertainty.
+I simplified the explanation of CLL to match Otto's low health literacy and potential difficulties with memory and processing speed. I avoided medical jargon and focused on clear, reassuring language to address his high anxiety and uncertainty. The explanation emphasizes monitoring and the non-contagious nature of CLL to help reduce worry.
 
 ---
 
@@ -20,23 +22,23 @@ I used simple language and avoided complex medical terms to ensure that Otto can
 
 # Generic baseline explanation
 
-Chronic Lymphocytic Leukemia, often called CLL, is a type of blood cancer that affects lymphocytes, which are a kind of white blood cell. CLL usually develops slowly and is more common in older adults. Some people diagnosed with CLL may not need treatment right away, and doctors often monitor the condition with regular check-ups and blood tests.
+Chronic Lymphocytic Leukemia, often called CLL, is a type of blood cancer. It affects lymphocytes, which are a kind of white blood cell. CLL usually develops slowly and is more common in older adults. Some people diagnosed with CLL may not need treatment right away, and doctors often monitor the condition with regular check-ups and blood tests.
 
 # HEALIE-adapted explanation for Otto
 
 Chronic Lymphocytic Leukemia (CLL) is a type of **blood cancer**. It affects a kind of white blood cell called lymphocytes. 
 
-CLL usually develops slowly. This means that it may not cause problems right away. Many people with CLL do not need treatment immediately after being diagnosed. Instead, doctors can watch your health with regular check-ups and blood tests. 
+CLL usually develops slowly. Many people with CLL do not need treatment right away. Instead, doctors may watch the condition closely with regular check-ups and blood tests. 
 
 Here are some important points about CLL:
 
 - CLL is more common in older adults.
 - It is not spread through everyday contact.
-- Treatment decisions depend on your symptoms and blood test results.
+- A doctor can explain what CLL means for you.
 
-It's okay to feel concerned. You will have regular check-ups to monitor your condition. Remember, CLL often progresses slowly. 
+It's okay to feel concerned. Remember, CLL often progresses slowly, and your doctor will monitor your health regularly.
 
-In summary, CLL is a type of blood cancer that can be monitored without immediate treatment. 
+In summary, CLL is a slow-developing blood cancer that your doctor will keep an eye on.
 
 # Adaptation trace
 
@@ -47,12 +49,12 @@ In summary, CLL is a type of blood cancer that can be monitored without immediat
 - Simplified Medical Terms: Used "blood cancer" instead of "hematological malignancy."
 - Bold: Highlighted important terms.
 - Bullet Points/Lists: Summarized key information as bullet points.
-- Repeat Information: Repeated the central message about CLL being monitored.
+- Repeat Information: Repeated the main message near the end.
 - Positive information first: Mentioned slow progression and regular monitoring early.
-- Reassurance: Included a calming sentence about regular check-ups.
+- Reassurance (it's ok phrases): Added a calming sentence after explaining the diagnosis.
 - Secondary sentences: Avoided long subordinate clauses.
 - Font Size: Ensured readability for older adults.
-- Order of information: Started with stabilizing information before explaining details.
+- Order of information: Started with stabilizing information then explained disease details. 
 - Enumeration (Steps): Presented key information step by step.
 
 ---
